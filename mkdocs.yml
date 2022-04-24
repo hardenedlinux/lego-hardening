@@ -4,7 +4,7 @@ site_url: https://hardenedlinux.github.io/HardenedNixOS-Profile
 repo_name: hardenedlinux/HardenedNixOS-Profile
 repo_url: https://github.com/hardenedlinux/HardenedNixOS-Profile
 
-pages:
+nav:
 - Home Page: index.md
 
 extra_css:
