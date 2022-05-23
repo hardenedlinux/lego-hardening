@@ -1,18 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-         <loc>https://hardenedlinux.github.io/HardenedNixOS-Profile/</loc>
-         <lastmod>2022-04-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://hardenedlinux.github.io/HardenedNixOS-Profile/SUMMARY/</loc>
-         <lastmod>2022-04-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://hardenedlinux.github.io/HardenedNixOS-Profile/architecture-decisions/adr_template/</loc>
-         <lastmod>2022-04-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://hardenedlinux.github.io/HardenedNixOS-Profile/categories/</loc>
+  </url><url>
+    <loc>https://hardenedlinux.github.io/HardenedNixOS-Profile/</loc>
+  </url><url>
+    <loc>https://hardenedlinux.github.io/HardenedNixOS-Profile/posts/</loc>
+  </url><url>
+    <loc>https://hardenedlinux.github.io/HardenedNixOS-Profile/search/</loc>
+  </url><url>
+    <loc>https://hardenedlinux.github.io/HardenedNixOS-Profile/tags/</loc>
+  </url><url>
+    <loc>https://hardenedlinux.github.io/HardenedNixOS-Profile/posts/test/</loc>
+  </url>
 </urlset>
