@@ -1,26 +1,34 @@
 {
   inputs = {
     std.url = "github:divnix/std";
-    data-merge.url = "github:divnix/data-merge";
-    yants.url = "github:divnix/yants";
+    std.inputs.nixpkgs.follows = "nixpkgs";
 
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    latest.url = "github:NixOS/nixpkgs/master";
-  };
 
+    org-roam-book-template.url = "github:gtrunsec/org-roam-book-template";
+    org-roam-book-template.inputs.nixpkgs.follows = "nixpkgs";
+
+    cells-lab.url = "github:GTrunSec/cells-lab";
+  };
   outputs = {std, ...} @ inputs:
-    std.grow {
+    std.growOn {
       inherit inputs;
       cellsFrom = ./cells;
-      systems = ["x86_64-linux" "x86_64-darwin"];
       organelles = [
+        (std.installables "packages")
+
+        (std.functions "devshellProfiles")
+        (std.devshells "devshells")
+
         (std.runnables "entrypoints")
 
         (std.functions "library")
 
-        (std.functions "configFiles")
+        (std.functions "overlays")
 
         (std.functions "apparmor")
       ];
+    } {
+      devShells = inputs.std.harvest inputs.self ["main" "devshells"];
     };
 }
