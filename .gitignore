@@ -3,5 +3,10 @@
 *.log
 tmp/
 
-
+/.data
 .std
+
+# nixago: ignore-linked-files
+/.conform.yaml
+/treefmt.toml
+/lefthook.yml

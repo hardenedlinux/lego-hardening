@@ -8,24 +8,13 @@ jobs:
   nix-build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: cachix/install-nix-action@v17
-        with:
-          install_url: https://github.com/numtide/nix-unstable-installer/releases/download/nix-2.8.0pre20220415_b135de2/install
-          extra_nix_config: |
-            experimental-features = nix-command flakes
-            system-features = nixos-test benchmark big-parallel kvm recursive-nix
 
-      - name: Run Flake Show
-        run: nix -Lv flake show
+      - uses: DeterminateSystems/nix-installer-action@main
+      - uses: DeterminateSystems/magic-nix-cache-action@main
 
-      - name: Build Doc
-        run: nix develop --show-trace --command -- mkdoc
-
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4.4.0
-        with:
-          branch: gh-pages
-          folder: ./docs/publish/public
+      - name: Devshell
+        run: |
+          nix develop ./nix/std --command echo hardenedlinux
