@@ -16,35 +16,19 @@
         "type": "github"
       }
     },
-    "attack-control-framework-mappings": {
+    "ansible-collection-hardening": {
       "flake": false,
       "locked": {
-        "lastModified": 1696427438,
-        "narHash": "sha256-6sp73lT3+8UhFWmAUBV7x9FMHAQGY2xyZKCo7XoSD84=",
-        "owner": "center-for-threat-informed-defense",
-        "repo": "attack-control-framework-mappings",
-        "rev": "30c5dbf0f22f0fde2d690ffba3aa51934c12d9df",
+        "lastModified": 1702339914,
+        "narHash": "sha256-Mdqigxcg1N3dK5Use85RhevGEcTrBOs21HOTFgvYUDQ=",
+        "owner": "dev-sec",
+        "repo": "ansible-collection-hardening",
+        "rev": "3794251a9434a5ec2bb6bd7ff1f2f89447d94407",
         "type": "github"
       },
       "original": {
-        "owner": "center-for-threat-informed-defense",
-        "repo": "attack-control-framework-mappings",
-        "type": "github"
-      }
-    },
-    "attack-flow": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1698770870,
-        "narHash": "sha256-qvggqyQRSvZCq1fwY1trorgmAmbbQ7C4smG5Doq4HE4=",
-        "owner": "center-for-threat-informed-defense",
-        "repo": "attack-flow",
-        "rev": "4225fea8fa3dd77629e251410616a0655bd6c106",
-        "type": "github"
-      },
-      "original": {
-        "owner": "center-for-threat-informed-defense",
-        "repo": "attack-flow",
+        "owner": "dev-sec",
+        "repo": "ansible-collection-hardening",
         "type": "github"
       }
     },
@@ -428,38 +412,6 @@
         "type": "github"
       }
     },
-    "ocsf": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1699563345,
-        "narHash": "sha256-w9sBLowd5xNUfcRS6TO0W2s5cW5IhiI3kJJ7UP0jtvU=",
-        "owner": "ocsf",
-        "repo": "ocsf-schema",
-        "rev": "22c324330aae83829367a8ebba8dbd6c1d557b7f",
-        "type": "github"
-      },
-      "original": {
-        "owner": "ocsf",
-        "repo": "ocsf-schema",
-        "type": "github"
-      }
-    },
-    "ocsf-benthos": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1694618962,
-        "narHash": "sha256-XlAl9Vddy+heDwxfF9UhMdHsn5jNwt5QQipWmWHAfeE=",
-        "owner": "ocsf",
-        "repo": "ocsf-benthos",
-        "rev": "5fe81dc623777c41a98092fab4715733ee842080",
-        "type": "github"
-      },
-      "original": {
-        "owner": "ocsf",
-        "repo": "ocsf-benthos",
-        "type": "github"
-      }
-    },
     "pre-commit-hooks": {
       "inputs": {
         "flake-compat": "flake-compat_3",
@@ -490,11 +442,8 @@
     },
     "root": {
       "inputs": {
-        "attack-control-framework-mappings": "attack-control-framework-mappings",
-        "attack-flow": "attack-flow",
-        "nickel": "nickel",
-        "ocsf": "ocsf",
-        "ocsf-benthos": "ocsf-benthos"
+        "ansible-collection-hardening": "ansible-collection-hardening",
+        "nickel": "nickel"
       }
     },
     "rust-overlay": {
