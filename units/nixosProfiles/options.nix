@@ -19,5 +19,9 @@
   nginxNixosOptionsDoc = inputs.nixos-23_11.legacyPackages.nixosOptionsDoc {
     options = self.nginx.options.services.nginx;
   };
-  nginxNixosOptionsDocJson = builtins.fromJSON (builtins.readFile (self.nginxNixosOptionsDoc.optionsJSON + "/share/doc/nixos/options.json"));
+  nginxNixosOptionsDocJson = builtins.fromJSON (
+    builtins.readFile (
+      self.nginxNixosOptionsDoc.optionsJSON + "/share/doc/nixos/options.json"
+    )
+  );
 }
