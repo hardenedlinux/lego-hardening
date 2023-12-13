@@ -22,7 +22,9 @@
     {std, call-flake, ...}@inputs:
     std.growOn
       {
-        inputs = inputs // (call-flake ../lock).inputs // (call-flake ../..).inputs;
+        inputs = inputs // (call-flake ../lock).inputs // (call-flake ../..).inputs // {
+          lego-hardening = call-flake ../..;
+        };
         cellsFrom = ./cells;
 
         cellBlocks = with std.blockTypes; [

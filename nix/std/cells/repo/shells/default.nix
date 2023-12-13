@@ -19,6 +19,7 @@ l.mapAttrs (_: std.lib.dev.mkShell) {
         cell.nixago.treefmt.default
         cell.nixago.lefthook.default
         cell.nixago.conform.default
+        cell.nixago.nginx
       ];
     };
 }

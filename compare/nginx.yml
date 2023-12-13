@@ -1,0 +1,2423 @@
+ansible-collection-hardening:
+  argument_specs:
+    main:
+      options:
+        nginx_add_header:
+          default:
+          - X-Frame-Options SAMEORIGIN
+          - X-Content-Type-Options nosniff
+          - X-XSS-Protection "1; mode=block"
+          - Content-Security-Policy \"script-src 'self'; object-src 'self'\"
+          description: Adds the specified field to a response header provided that
+            the response code equals 200, 201, 204, 206, 301, 302, 303, 304, or 307.
+            See [nginx_add_header](http://nginx.org/en/docs/http/ngx_http_headers_module.html#add_header)
+          type: list
+        nginx_client_body_buffer_size:
+          default: 1k
+          description: Sets buffer size for reading client request body. In case the
+            request body is larger than the buffer, the whole body or only its part
+            is written to a temporary file. See [nginx_client_body_buffer_size](http://nginx.org/en/docs/http/ngx_http_core_module.html#client_body_buffer_size)
+          type: str
+        nginx_client_body_timeout:
+          default: 10
+          description: Defines a timeout for reading client request body. See [nginx_client_body_timeout](http://nginx.org/en/docs/http/ngx_http_core_module.html#client_body_timeout)
+          type: int
+        nginx_client_header_buffer_size:
+          default: 1k
+          description: Sets buffer size for reading client request header. For most
+            requests, a buffer of 1K bytes is enough. See [nginx_client_header_buffer_size](http://nginx.org/en/docs/http/ngx_http_core_module.html#client
+          type: str
+        nginx_client_header_timeout:
+          default: 10
+          description: Defines a timeout for reading client request header. See [nginx_client_header_timeout](http://nginx.org/en/docs/http/ngx_http_core_module.html#client_header_timeout)
+          type: int
+        nginx_client_max_body_size:
+          default: 1k
+          description: Sets the maximum allowed size of the client request body, specified
+            in the "Content-Length" request header field. If the size in a request
+            exceeds the configured value, the 413 (Request Entity Too Large) error
+            is returned to the client. See [nginx_client_max_body_size](http://nginx.org/en/docs/http/ngx_http_core_module.html#client_max_body_size)
+          type: str
+        nginx_configuration_dir:
+          default: /etc/nginx
+          description: The main location for all nginx configuration files
+          type: str
+        nginx_configuration_hardening_dir:
+          default: /etc/nginx
+          description: The location for the nginx hardening configuration file (Could
+            be different e.g. when used in jails)
+          type: str
+        nginx_dh_size:
+          default: 2048
+          description: Specifies the length of DH parameters for EDH ciphers. See
+            [nginx_dh_size](http://nginx.org/en/docs/http/ngx_http_ssl_module.html#ssl_dhparam)
+          type: int
+        nginx_keepalive_timeout:
+          default: 5 5
+          description: The first parameter sets a timeout during which a keep-alive
+            client connection will stay open on the server side. The zero value disables
+            keep-alive client connections. The optional second parameter sets a value
+            in the "Keep-Alive timeout=time" response header field. See [nginx_keepalive_timeout](http://nginx.org/en/docs/http/ngx_http_core_module.html#keepalive_timeout)
+          type: str
+        nginx_large_client_header_buffers:
+          default: 2 1k
+          description: Sets the maximum number and size of buffers used for reading
+            large client request header. See [nginx_large_client_header_buffers](http://nginx.org/en/docs/http/ngx_http_core_module.html#large_client_header_buffers)
+          type: str
+        nginx_limit_conn:
+          default: default 5
+          description: Sets the shared memory zone and the maximum allowed number
+            of connections for a given key value. See [nginx_limit_conn](http://nginx.org/en/docs/http/ngx_http_limit_conn_module.html#limit_conn)
+          type: str
+        nginx_limit_conn_zone:
+          default: $binary_remote_addr zone=default:10m
+          description: Sets parameters for a shared memory zone that will keep states
+            for various keys. See [nginx_limit_conn_zone](http://nginx.org/en/docs/http/ngx_http_limit_conn_module.html#limit_conn_zone)
+          type: str
+        nginx_owner_group:
+          default: root
+          description: The owner group of the nginx configuration files
+          type: str
+        nginx_owner_user:
+          default: root
+          description: The owner user of the nginx configuration files
+          type: str
+        nginx_remove_default_site:
+          default: true
+          description: Disables the default site. Set to false to enable the default
+            site in nginx.
+          type: bool
+        nginx_send_timeout:
+          default: 10
+          description: Sets a timeout for transmitting a response to the client. See
+            [nginx_send_timeout](http://nginx.org/en/docs/http/ngx_http_core_module.html#send_timeout)
+          type: int
+        nginx_server_tokens:
+          default: 'off'
+          description: Disables emitting nginx version in error messages and in the
+            "Server" response header field. Set to on to enable the nginx version
+            in error messages and "Server" response header. See [nginx_server_tokens](http://nginx.org/en/docs/http/ngx_http_core_module.html#server_tokens)
+          type: str
+        nginx_ssl_ciphers:
+          default: ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256
+          description: Specifies the TLS ciphers which should be used. See [nginx_ssl_ciphers](http://nginx.org/en/docs/http/ngx_http_ssl_module.html#ssl_ciphers)
+          type: str
+        nginx_ssl_prefer_server_ciphers:
+          default: 'on'
+          description: Specifies that server ciphers should be preferred over client
+            ciphers when using the TLS protocols. Set to false to disable it. See
+            [nginx_ssl_prefer_server_ciphers](http://nginx.org/en/docs/http/ngx_http_ssl_module.html#ssl_prefer_server_ciphers)
+          type: str
+        nginx_ssl_protocols:
+          default: TLSv1.2
+          description: Specifies the SSL protocol which should be used. See [nginx_ssl_protocols](http://nginx.org/en/docs/http/ngx_http_ssl_module.html#ssl_protocols)
+          type: str
+      short_description: The main entry point for the nginx hardening role.
+      version_added: 8.8.0
+nixos:
+  services.nginx.additionalModules:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '[ ]'
+    description: 'Additional [third-party nginx modules](https://www.nginx.com/resources/wiki/modules/)
+
+      to install. Packaged modules are available in `pkgs.nginxModules`.
+
+      '
+    example:
+      _type: literalExpression
+      text: '[ pkgs.nginxModules.echo ]'
+    loc:
+    - services
+    - nginx
+    - additionalModules
+    readOnly: false
+    type: list of attribute set of anything
+  services.nginx.appendConfig:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '""'
+    description: 'Configuration lines appended to the generated Nginx
+
+      configuration file. Commonly used by different modules
+
+      providing http snippets. {option}`appendConfig`
+
+      can be specified more than once and its value will be
+
+      concatenated (contrary to {option}`config` which
+
+      can be set only once).
+
+      '
+    loc:
+    - services
+    - nginx
+    - appendConfig
+    readOnly: false
+    type: strings concatenated with "\n"
+  services.nginx.appendHttpConfig:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '""'
+    description: 'Configuration lines to be appended to the generated http block.
+
+      This is mutually exclusive with using config and httpConfig for
+
+      specifying the whole http block verbatim.
+
+      '
+    loc:
+    - services
+    - nginx
+    - appendHttpConfig
+    readOnly: false
+    type: strings concatenated with "\n"
+  services.nginx.clientMaxBodySize:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '"10m"'
+    description: Set nginx global client_max_body_size.
+    loc:
+    - services
+    - nginx
+    - clientMaxBodySize
+    readOnly: false
+    type: string
+  services.nginx.commonHttpConfig:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '""'
+    description: 'With nginx you must provide common http context definitions before
+
+      they are used, e.g. log_format, resolver, etc. inside of server
+
+      or location contexts. Use this attribute to set these definitions
+
+      at the appropriate location.
+
+      '
+    example:
+      _type: literalExpression
+      text: "''\n  resolver 127.0.0.1 valid=5s;\n  \n  log_format myformat '$remote_addr\
+        \ - $remote_user [$time_local] '\n                      '\"$request\" $status\
+        \ $body_bytes_sent '\n                      '\"$http_referer\" \"$http_user_agent\"\
+        ';\n''"
+    loc:
+    - services
+    - nginx
+    - commonHttpConfig
+    readOnly: false
+    type: strings concatenated with "\n"
+  services.nginx.config:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '""'
+    description: 'Verbatim {file}`nginx.conf` configuration.
+
+      This is mutually exclusive to any other config option for
+
+      {file}`nginx.conf` except for
+
+      - [](#opt-services.nginx.appendConfig)
+
+      - [](#opt-services.nginx.httpConfig)
+
+      - [](#opt-services.nginx.logError)
+
+
+      If additional verbatim config in addition to other options is needed,
+
+      [](#opt-services.nginx.appendConfig) should be used instead.
+
+      '
+    loc:
+    - services
+    - nginx
+    - config
+    readOnly: false
+    type: string
+  services.nginx.defaultHTTPListenPort:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '80'
+    description: 'If vhosts do not specify listen.port, use these ports for HTTP by
+      default.
+
+      '
+    example:
+      _type: literalExpression
+      text: '8080'
+    loc:
+    - services
+    - nginx
+    - defaultHTTPListenPort
+    readOnly: false
+    type: 16 bit unsigned integer; between 0 and 65535 (both inclusive)
+  services.nginx.defaultListen:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '[ ]'
+    description: 'If vhosts do not specify listen, use these addresses by default.
+
+      This option takes precedence over {option}`defaultListenAddresses` and
+
+      other listen-related defaults options.
+
+      '
+    example:
+      _type: literalExpression
+      text: "[\n  { addr = \"10.0.0.12\"; proxyProtocol = true; ssl = true; }\n  {\
+        \ addr = \"0.0.0.0\"; }\n  { addr = \"[::0]\"; }\n]\n"
+    loc:
+    - services
+    - nginx
+    - defaultListen
+    readOnly: false
+    type: list of (submodule)
+  services.nginx.defaultListen.*.addr:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    description: IP address.
+    loc:
+    - services
+    - nginx
+    - defaultListen
+    - '*'
+    - addr
+    readOnly: false
+    type: string
+  services.nginx.defaultListen.*.extraParameters:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '[ ]'
+    description: Extra parameters of this listen directive.
+    example:
+      _type: literalExpression
+      text: "[\n  \"backlog=1024\"\n  \"deferred\"\n]"
+    loc:
+    - services
+    - nginx
+    - defaultListen
+    - '*'
+    - extraParameters
+    readOnly: false
+    type: list of string
+  services.nginx.defaultListen.*.port:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'null'
+    description: Port number.
+    loc:
+    - services
+    - nginx
+    - defaultListen
+    - '*'
+    - port
+    readOnly: false
+    type: null or 16 bit unsigned integer; between 0 and 65535 (both inclusive)
+  services.nginx.defaultListen.*.proxyProtocol:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'false'
+    description: Enable PROXY protocol.
+    loc:
+    - services
+    - nginx
+    - defaultListen
+    - '*'
+    - proxyProtocol
+    readOnly: false
+    type: boolean
+  services.nginx.defaultListen.*.ssl:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'null'
+    description: Enable SSL.
+    loc:
+    - services
+    - nginx
+    - defaultListen
+    - '*'
+    - ssl
+    readOnly: false
+    type: null or boolean
+  services.nginx.defaultListenAddresses:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '[ "0.0.0.0" ] ++ lib.optional config.networking.enableIPv6 "[::0]"'
+    description: 'If vhosts do not specify listenAddresses, use these addresses by
+      default.
+
+      This is akin to writing `defaultListen = [ { addr = "0.0.0.0" } ]`.
+
+      '
+    example:
+      _type: literalExpression
+      text: '[ "10.0.0.12" "[2002:a00:1::]" ]'
+    loc:
+    - services
+    - nginx
+    - defaultListenAddresses
+    readOnly: false
+    type: list of string
+  services.nginx.defaultMimeTypes:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: $''{pkgs.mailcap}/etc/nginx/mime.types
+    description: 'Default MIME types for NGINX, as MIME types definitions from NGINX
+      are very incomplete,
+
+      we use by default the ones bundled in the mailcap package, used by most of the
+      other
+
+      Linux distributions.
+
+      '
+    example:
+      _type: literalExpression
+      text: $''{pkgs.nginx}/conf/mime.types
+    loc:
+    - services
+    - nginx
+    - defaultMimeTypes
+    readOnly: false
+    type: path
+  services.nginx.defaultSSLListenPort:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '443'
+    description: 'If vhosts do not specify listen.port, use these ports for SSL by
+      default.
+
+      '
+    example:
+      _type: literalExpression
+      text: '8443'
+    loc:
+    - services
+    - nginx
+    - defaultSSLListenPort
+    readOnly: false
+    type: 16 bit unsigned integer; between 0 and 65535 (both inclusive)
+  services.nginx.enable:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'false'
+    description: Whether to enable Nginx Web Server.
+    example:
+      _type: literalExpression
+      text: 'true'
+    loc:
+    - services
+    - nginx
+    - enable
+    readOnly: false
+    type: boolean
+  services.nginx.enableQuicBPF:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'false'
+    description: 'Enables routing of QUIC packets using eBPF. When enabled, this allows
+
+      to support QUIC connection migration. The directive is only supported
+
+      on Linux 5.7+.
+
+      Note that enabling this option will make nginx run with extended
+
+      capabilities that are usually limited to processes running as root
+
+      namely `CAP_SYS_ADMIN` and `CAP_NET_ADMIN`.
+
+      '
+    loc:
+    - services
+    - nginx
+    - enableQuicBPF
+    readOnly: false
+    type: boolean
+  services.nginx.enableReload:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'false'
+    description: 'Reload nginx when configuration file changes (instead of restart).
+
+      The configuration file is exposed at {file}`/etc/nginx/nginx.conf`.
+
+      See also `systemd.services.*.restartIfChanged`.
+
+      '
+    loc:
+    - services
+    - nginx
+    - enableReload
+    readOnly: false
+    type: boolean
+  services.nginx.eventsConfig:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '""'
+    description: 'Configuration lines to be set inside the events block.
+
+      '
+    loc:
+    - services
+    - nginx
+    - eventsConfig
+    readOnly: false
+    type: strings concatenated with "\n"
+  services.nginx.gitweb.enable:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/gitweb.nix
+    default:
+      _type: literalExpression
+      text: 'false'
+    description: 'If true, enable gitweb in nginx.
+
+      '
+    loc:
+    - services
+    - nginx
+    - gitweb
+    - enable
+    readOnly: false
+    type: boolean
+  services.nginx.gitweb.group:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/gitweb.nix
+    default:
+      _type: literalExpression
+      text: '"nginx"'
+    description: 'Group that the CGI process will belong to. (Set to `config.services.gitolite.group`
+      if you are using gitolite.)
+
+      '
+    loc:
+    - services
+    - nginx
+    - gitweb
+    - group
+    readOnly: false
+    type: string
+  services.nginx.gitweb.location:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/gitweb.nix
+    default:
+      _type: literalExpression
+      text: '"/gitweb"'
+    description: 'Location to serve gitweb on.
+
+      '
+    loc:
+    - services
+    - nginx
+    - gitweb
+    - location
+    readOnly: false
+    type: string
+  services.nginx.gitweb.user:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/gitweb.nix
+    default:
+      _type: literalExpression
+      text: '"nginx"'
+    description: 'Existing user that the CGI process will belong to. (Default almost
+      surely will do.)
+
+      '
+    loc:
+    - services
+    - nginx
+    - gitweb
+    - user
+    readOnly: false
+    type: string
+  services.nginx.gitweb.virtualHost:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/gitweb.nix
+    default:
+      _type: literalExpression
+      text: '"_"'
+    description: 'VirtualHost to serve gitweb on. Default is catch-all.
+
+      '
+    loc:
+    - services
+    - nginx
+    - gitweb
+    - virtualHost
+    readOnly: false
+    type: string
+  services.nginx.group:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '"nginx"'
+    description: Group account under which nginx runs.
+    loc:
+    - services
+    - nginx
+    - group
+    readOnly: false
+    type: string
+  services.nginx.httpConfig:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '""'
+    description: 'Configuration lines to be set inside the http block.
+
+      This is mutually exclusive with the structured configuration
+
+      via virtualHosts and the recommendedXyzSettings configuration
+
+      options. See appendHttpConfig for appending to the generated http block.
+
+      '
+    loc:
+    - services
+    - nginx
+    - httpConfig
+    readOnly: false
+    type: strings concatenated with "\n"
+  services.nginx.logError:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '"stderr"'
+    description: 'Configures logging.
+
+      The first parameter defines a file that will store the log. The
+
+      special value stderr selects the standard error file. Logging to
+
+      syslog can be configured by specifying the “syslog:” prefix.
+
+      The second parameter determines the level of logging, and can be
+
+      one of the following: debug, info, notice, warn, error, crit,
+
+      alert, or emerg. Log levels above are listed in the order of
+
+      increasing severity. Setting a certain log level will cause all
+
+      messages of the specified and more severe log levels to be logged.
+
+      If this parameter is omitted then error is used.
+
+      '
+    loc:
+    - services
+    - nginx
+    - logError
+    readOnly: false
+    type: string
+  services.nginx.mapHashBucketSize:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'null'
+    description: 'Sets the bucket size for the map variables hash tables. Default
+
+      value depends on the processor’s cache line size.
+
+      '
+    loc:
+    - services
+    - nginx
+    - mapHashBucketSize
+    readOnly: false
+    type: null or one of 32, 64, 128
+  services.nginx.mapHashMaxSize:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'null'
+    description: 'Sets the maximum size of the map variables hash tables.
+
+      '
+    loc:
+    - services
+    - nginx
+    - mapHashMaxSize
+    readOnly: false
+    type: null or positive integer, meaning >0
+  services.nginx.package:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: pkgs.nginxStable
+    description: 'Nginx package to use. This defaults to the stable version. Note
+
+      that the nginx team recommends to use the mainline version which
+
+      available in nixpkgs as `nginxMainline`.
+
+      '
+    loc:
+    - services
+    - nginx
+    - package
+    readOnly: false
+    type: package
+  services.nginx.preStart:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '""'
+    description: 'Shell commands executed before the service''s nginx is started.
+
+      '
+    loc:
+    - services
+    - nginx
+    - preStart
+    readOnly: false
+    type: strings concatenated with "\n"
+  services.nginx.proxyCachePath:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '{ }'
+    description: 'Configure a proxy cache path entry.
+
+      See <https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_cache_path>
+      for documentation.
+
+      '
+    loc:
+    - services
+    - nginx
+    - proxyCachePath
+    readOnly: false
+    type: attribute set of (submodule)
+  services.nginx.proxyCachePath.<name>.enable:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'false'
+    description: Whether to enable this proxy cache path entry.
+    example:
+      _type: literalExpression
+      text: 'true'
+    loc:
+    - services
+    - nginx
+    - proxyCachePath
+    - <name>
+    - enable
+    readOnly: false
+    type: boolean
+  services.nginx.proxyCachePath.<name>.inactive:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '"10m"'
+    description: 'Cached data that has not been accessed for the time specified by
+
+      the inactive parameter is removed from the cache, regardless of
+
+      its freshness.
+
+      '
+    example:
+      _type: literalExpression
+      text: '"1d"'
+    loc:
+    - services
+    - nginx
+    - proxyCachePath
+    - <name>
+    - inactive
+    readOnly: false
+    type: string
+  services.nginx.proxyCachePath.<name>.keysZoneName:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '"cache"'
+    description: Set name to shared memory zone.
+    example:
+      _type: literalExpression
+      text: '"my_cache"'
+    loc:
+    - services
+    - nginx
+    - proxyCachePath
+    - <name>
+    - keysZoneName
+    readOnly: false
+    type: string
+  services.nginx.proxyCachePath.<name>.keysZoneSize:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '"10m"'
+    description: Set size to shared memory zone.
+    example:
+      _type: literalExpression
+      text: '"32m"'
+    loc:
+    - services
+    - nginx
+    - proxyCachePath
+    - <name>
+    - keysZoneSize
+    readOnly: false
+    type: string
+  services.nginx.proxyCachePath.<name>.levels:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '"1:2"'
+    description: 'The levels parameter defines structure of subdirectories in cache:
+      from
+
+      1 to 3, each level accepts values 1 or 2. Сan be used any combination of
+
+      1 and 2 in these formats: x, x:x and x:x:x.
+
+      '
+    example:
+      _type: literalExpression
+      text: '"1:2:2"'
+    loc:
+    - services
+    - nginx
+    - proxyCachePath
+    - <name>
+    - levels
+    readOnly: false
+    type: string
+  services.nginx.proxyCachePath.<name>.maxSize:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '"1g"'
+    description: Set maximum cache size
+    example:
+      _type: literalExpression
+      text: '"2048m"'
+    loc:
+    - services
+    - nginx
+    - proxyCachePath
+    - <name>
+    - maxSize
+    readOnly: false
+    type: string
+  services.nginx.proxyCachePath.<name>.useTempPath:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'false'
+    description: 'Nginx first writes files that are destined for the cache to a temporary
+
+      storage area, and the use_temp_path=off directive instructs Nginx to
+
+      write them to the same directories where they will be cached. Recommended
+
+      that you set this parameter to off to avoid unnecessary copying of data
+
+      between file systems.
+
+      '
+    example:
+      _type: literalExpression
+      text: 'true'
+    loc:
+    - services
+    - nginx
+    - proxyCachePath
+    - <name>
+    - useTempPath
+    readOnly: false
+    type: boolean
+  services.nginx.proxyResolveWhileRunning:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'false'
+    description: 'Resolves domains of proxyPass targets at runtime
+
+      and not only at start, you have to set
+
+      services.nginx.resolver, too.
+
+      '
+    loc:
+    - services
+    - nginx
+    - proxyResolveWhileRunning
+    readOnly: false
+    type: boolean
+  services.nginx.proxyTimeout:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '"60s"'
+    description: 'Change the proxy related timeouts in recommendedProxySettings.
+
+      '
+    example:
+      _type: literalExpression
+      text: '"20s"'
+    loc:
+    - services
+    - nginx
+    - proxyTimeout
+    readOnly: false
+    type: string
+  services.nginx.recommendedBrotliSettings:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'false'
+    description: 'Enable recommended brotli settings.
+
+      Learn more about compression in Brotli format [here](https://github.com/google/ngx_brotli/).
+
+
+      This adds `pkgs.nginxModules.brotli` to `services.nginx.additionalModules`.
+
+      '
+    loc:
+    - services
+    - nginx
+    - recommendedBrotliSettings
+    readOnly: false
+    type: boolean
+  services.nginx.recommendedGzipSettings:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'false'
+    description: 'Enable recommended gzip settings.
+
+      Learn more about compression in Gzip format [here](https://docs.nginx.com/nginx/admin-guide/web-server/compression/).
+
+      '
+    loc:
+    - services
+    - nginx
+    - recommendedGzipSettings
+    readOnly: false
+    type: boolean
+  services.nginx.recommendedOptimisation:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'false'
+    description: 'Enable recommended optimisation settings.
+
+      '
+    loc:
+    - services
+    - nginx
+    - recommendedOptimisation
+    readOnly: false
+    type: boolean
+  services.nginx.recommendedProxySettings:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'false'
+    description: 'Whether to enable recommended proxy settings if a vhost does not
+      specify the option manually.
+
+      '
+    loc:
+    - services
+    - nginx
+    - recommendedProxySettings
+    readOnly: false
+    type: boolean
+  services.nginx.recommendedTlsSettings:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'false'
+    description: 'Enable recommended TLS settings.
+
+      '
+    loc:
+    - services
+    - nginx
+    - recommendedTlsSettings
+    readOnly: false
+    type: boolean
+  services.nginx.recommendedZstdSettings:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'false'
+    description: 'Enable recommended zstd settings.
+
+      Learn more about compression in Zstd format [here](https://github.com/tokers/zstd-nginx-module).
+
+
+      This adds `pkgs.nginxModules.zstd` to `services.nginx.additionalModules`.
+
+      '
+    loc:
+    - services
+    - nginx
+    - recommendedZstdSettings
+    readOnly: false
+    type: boolean
+  services.nginx.resolver:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '{ }'
+    description: 'Configures name servers used to resolve names of upstream servers
+      into addresses
+
+      '
+    loc:
+    - services
+    - nginx
+    - resolver
+    readOnly: false
+    type: submodule
+  services.nginx.resolver.addresses:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '[ ]'
+    description: List of resolvers to use
+    example:
+      _type: literalExpression
+      text: '[ "[::1]" "127.0.0.1:5353" ]'
+    loc:
+    - services
+    - nginx
+    - resolver
+    - addresses
+    readOnly: false
+    type: list of string
+  services.nginx.resolver.ipv6:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'true'
+    description: 'By default, nginx will look up both IPv4 and IPv6 addresses while
+      resolving.
+
+      If looking up of IPv6 addresses is not desired, the ipv6=off parameter can be
+
+      specified.
+
+      '
+    loc:
+    - services
+    - nginx
+    - resolver
+    - ipv6
+    readOnly: false
+    type: boolean
+  services.nginx.resolver.valid:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '""'
+    description: 'By default, nginx caches answers using the TTL value of a response.
+
+      An optional valid parameter allows overriding it
+
+      '
+    example:
+      _type: literalExpression
+      text: '"30s"'
+    loc:
+    - services
+    - nginx
+    - resolver
+    - valid
+    readOnly: false
+    type: string
+  services.nginx.serverNamesHashBucketSize:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'null'
+    description: 'Sets the bucket size for the server names hash tables. Default
+
+      value depends on the processor’s cache line size.
+
+      '
+    loc:
+    - services
+    - nginx
+    - serverNamesHashBucketSize
+    readOnly: false
+    type: null or positive integer, meaning >0
+  services.nginx.serverNamesHashMaxSize:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'null'
+    description: 'Sets the maximum size of the server names hash tables.
+
+      '
+    loc:
+    - services
+    - nginx
+    - serverNamesHashMaxSize
+    readOnly: false
+    type: null or positive integer, meaning >0
+  services.nginx.serverTokens:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'false'
+    description: Show nginx version in headers and error pages.
+    loc:
+    - services
+    - nginx
+    - serverTokens
+    readOnly: false
+    type: boolean
+  services.nginx.sslCiphers:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '"ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384"'
+    description: Ciphers to choose from when negotiating TLS handshakes.
+    loc:
+    - services
+    - nginx
+    - sslCiphers
+    readOnly: false
+    type: null or string
+  services.nginx.sslDhparam:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'null'
+    description: Path to DH parameters file.
+    example:
+      _type: literalExpression
+      text: '"/path/to/dhparams.pem"'
+    loc:
+    - services
+    - nginx
+    - sslDhparam
+    readOnly: false
+    type: null or path
+  services.nginx.sslProtocols:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '"TLSv1.2 TLSv1.3"'
+    description: Allowed TLS protocol versions.
+    example:
+      _type: literalExpression
+      text: '"TLSv1 TLSv1.1 TLSv1.2 TLSv1.3"'
+    loc:
+    - services
+    - nginx
+    - sslProtocols
+    readOnly: false
+    type: string
+  services.nginx.sso.configuration:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/security/nginx-sso.nix
+    default:
+      _type: literalExpression
+      text: '{ }'
+    description: 'nginx-sso configuration
+
+      ([documentation](https://github.com/Luzifer/nginx-sso/wiki/Main-Configuration))
+
+      as a Nix attribute set.
+
+      '
+    example:
+      _type: literalExpression
+      text: "{\n  listen = { addr = \"127.0.0.1\"; port = 8080; };\n\n  providers.token.tokens\
+        \ = {\n    myuser = \"MyToken\";\n  };\n\n  acl = {\n    rule_sets = [\n \
+        \     {\n        rules = [ { field = \"x-application\"; equals = \"MyApp\"\
+        ; } ];\n        allow = [ \"myuser\" ];\n      }\n    ];\n  };\n}\n"
+    loc:
+    - services
+    - nginx
+    - sso
+    - configuration
+    readOnly: false
+    type: attribute set of unspecified value
+  services.nginx.sso.enable:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/security/nginx-sso.nix
+    default:
+      _type: literalExpression
+      text: 'false'
+    description: Whether to enable nginx-sso service.
+    example:
+      _type: literalExpression
+      text: 'true'
+    loc:
+    - services
+    - nginx
+    - sso
+    - enable
+    readOnly: false
+    type: boolean
+  services.nginx.sso.package:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/security/nginx-sso.nix
+    default:
+      _type: literalExpression
+      text: pkgs.nginx-sso
+    description: 'The nginx-sso package that should be used.
+
+      '
+    loc:
+    - services
+    - nginx
+    - sso
+    - package
+    readOnly: false
+    type: package
+  services.nginx.statusPage:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'false'
+    description: 'Enable status page reachable from localhost on http://127.0.0.1/nginx_status.
+
+      '
+    loc:
+    - services
+    - nginx
+    - statusPage
+    readOnly: false
+    type: boolean
+  services.nginx.streamConfig:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '""'
+    description: 'Configuration lines to be set inside the stream block.
+
+      '
+    example:
+      _type: literalExpression
+      text: "''\n  server {\n    listen 127.0.0.1:53 udp reuseport;\n    proxy_timeout\
+        \ 20s;\n    proxy_pass 192.168.0.1:53535;\n  }\n''"
+    loc:
+    - services
+    - nginx
+    - streamConfig
+    readOnly: false
+    type: strings concatenated with "\n"
+  services.nginx.upstreams:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '{ }'
+    description: 'Defines a group of servers to use as proxy target.
+
+      '
+    example:
+      _type: literalExpression
+      text: "{\n  backend = {\n    extraConfig = ''\n      keepalive 16;\n    '';\n\
+        \    servers = {\n      \"backend1.example.com:8080\" = {\n        weight\
+        \ = 5;\n      };\n      \"backend2.example.com\" = {\n        fail_timeout\
+        \ = \"30s\";\n        max_fails = 3;\n      };\n      \"backend3.example.com\"\
+        \ = { };\n      \"backup1.example.com\" = {\n        backup = true;\n    \
+        \  };\n      \"backup2.example.com\" = {\n        backup = true;\n      };\n\
+        \    };\n  };\n  memcached = {\n    servers = {\n      \"unix:/run//memcached/memcached.sock\"\
+        \ = { };\n    };\n  };\n}"
+    loc:
+    - services
+    - nginx
+    - upstreams
+    readOnly: false
+    type: attribute set of (submodule)
+  services.nginx.upstreams.<name>.extraConfig:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '""'
+    description: 'These lines go to the end of the upstream verbatim.
+
+      '
+    loc:
+    - services
+    - nginx
+    - upstreams
+    - <name>
+    - extraConfig
+    readOnly: false
+    type: strings concatenated with "\n"
+  services.nginx.upstreams.<name>.servers:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '{ }'
+    description: 'Defines the address and other parameters of the upstream servers.
+
+      See [the documentation](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#server)
+
+      for the available parameters.
+
+      '
+    example:
+      _type: literalMD
+      text: see [](#opt-services.nginx.upstreams)
+    loc:
+    - services
+    - nginx
+    - upstreams
+    - <name>
+    - servers
+    readOnly: false
+    type: attribute set of (attribute set of (boolean or signed integer or string))
+  services.nginx.upstreams.<name>.servers.<name>.backup:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'false'
+    description: 'Marks the server as a backup server. It will be passed
+
+      requests when the primary servers are unavailable.
+
+      '
+    loc:
+    - services
+    - nginx
+    - upstreams
+    - <name>
+    - servers
+    - <name>
+    - backup
+    readOnly: false
+    type: boolean
+  services.nginx.user:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '"nginx"'
+    description: User account under which nginx runs.
+    loc:
+    - services
+    - nginx
+    - user
+    readOnly: false
+    type: string
+  services.nginx.virtualHosts:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: "{\n  localhost = { };\n}"
+    description: Declarative vhost config
+    example:
+      _type: literalExpression
+      text: "{\n  \"hydra.example.com\" = {\n    forceSSL = true;\n    enableACME\
+        \ = true;\n    locations.\"/\" = {\n      proxyPass = \"http://localhost:3000\"\
+        ;\n    };\n  };\n};\n"
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    readOnly: false
+    type: attribute set of (submodule)
+  services.nginx.virtualHosts.<name>.acmeFallbackHost:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'null'
+    description: 'Host which to proxy requests to if ACME challenge is not found.
+      Useful
+
+      if you want multiple hosts to be able to verify the same domain name.
+
+
+      With this option, you could request certificates for the present domain
+
+      with an ACME client that is running on another host, which you would
+
+      specify here.
+
+      '
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - acmeFallbackHost
+    readOnly: false
+    type: null or string
+  services.nginx.virtualHosts.<name>.acmeRoot:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '"/var/lib/acme/acme-challenge"'
+    description: 'Directory for the ACME challenge, which is **public**. Don''t put
+      certs or keys in here.
+
+      Set to null to inherit from config.security.acme.
+
+      '
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - acmeRoot
+    readOnly: false
+    type: null or string
+  services.nginx.virtualHosts.<name>.addSSL:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'false'
+    description: 'Whether to enable HTTPS in addition to plain HTTP. This will set
+      defaults for
+
+      `listen` to listen on all interfaces on the respective default
+
+      ports (80, 443).
+
+      '
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - addSSL
+    readOnly: false
+    type: boolean
+  services.nginx.virtualHosts.<name>.basicAuth:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '{ }'
+    description: 'Basic Auth protection for a vhost.
+
+
+      WARNING: This is implemented to store the password in plain text in the
+
+      Nix store.
+
+      '
+    example:
+      _type: literalExpression
+      text: "{\n  user = \"password\";\n};\n"
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - basicAuth
+    readOnly: false
+    type: attribute set of string
+  services.nginx.virtualHosts.<name>.basicAuthFile:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'null'
+    description: 'Basic Auth password file for a vhost.
+
+      Can be created via: {command}`htpasswd -c <filename> <username>`.
+
+
+      WARNING: The generate file contains the users'' passwords in a
+
+      non-cryptographically-securely hashed way.
+
+      '
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - basicAuthFile
+    readOnly: false
+    type: null or path
+  services.nginx.virtualHosts.<name>.default:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'false'
+    description: 'Makes this vhost the default.
+
+      '
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - default
+    readOnly: false
+    type: boolean
+  services.nginx.virtualHosts.<name>.enableACME:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'false'
+    description: 'Whether to ask Let''s Encrypt to sign a certificate for this vhost.
+
+      Alternately, you can use an existing certificate through {option}`useACMEHost`.
+
+      '
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - enableACME
+    readOnly: false
+    type: boolean
+  services.nginx.virtualHosts.<name>.extraConfig:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '""'
+    description: 'These lines go to the end of the vhost verbatim.
+
+      '
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - extraConfig
+    readOnly: false
+    type: strings concatenated with "\n"
+  services.nginx.virtualHosts.<name>.forceSSL:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'false'
+    description: 'Whether to add a separate nginx server block that permanently redirects
+      (301)
+
+      all plain HTTP traffic to HTTPS. This will set defaults for
+
+      `listen` to listen on all interfaces on the respective default
+
+      ports (80, 443), where the non-SSL listens are used for the redirect vhosts.
+
+      '
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - forceSSL
+    readOnly: false
+    type: boolean
+  services.nginx.virtualHosts.<name>.globalRedirect:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'null'
+    description: 'If set, all requests for this host are redirected permanently to
+
+      the given hostname.
+
+      '
+    example:
+      _type: literalExpression
+      text: '"newserver.example.org"'
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - globalRedirect
+    readOnly: false
+    type: null or string
+  services.nginx.virtualHosts.<name>.http2:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'true'
+    description: 'Whether to enable the HTTP/2 protocol.
+
+      Note that (as of writing) due to nginx''s implementation, to disable
+
+      HTTP/2 you have to disable it on all vhosts that use a given
+
+      IP address / port.
+
+      If there is one server block configured to enable http2, then it is
+
+      enabled for all server blocks on this IP.
+
+      See https://stackoverflow.com/a/39466948/263061.
+
+      '
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - http2
+    readOnly: false
+    type: boolean
+  services.nginx.virtualHosts.<name>.http3:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'true'
+    description: 'Whether to enable the HTTP/3 protocol.
+
+      This requires using `pkgs.nginxQuic` package
+
+      which can be achieved by setting `services.nginx.package = pkgs.nginxQuic;`
+
+      and activate the QUIC transport protocol
+
+      `services.nginx.virtualHosts.<name>.quic = true;`.
+
+      Note that HTTP/3 support is experimental and
+
+      *not* yet recommended for production.
+
+      Read more at https://quic.nginx.org/
+
+      '
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - http3
+    readOnly: false
+    type: boolean
+  services.nginx.virtualHosts.<name>.http3_hq:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'false'
+    description: 'Whether to enable the HTTP/0.9 protocol negotiation used in QUIC
+      interoperability tests.
+
+      This requires using `pkgs.nginxQuic` package
+
+      which can be achieved by setting `services.nginx.package = pkgs.nginxQuic;`
+
+      and activate the QUIC transport protocol
+
+      `services.nginx.virtualHosts.<name>.quic = true;`.
+
+      Note that special application protocol support is experimental and
+
+      *not* yet recommended for production.
+
+      Read more at https://quic.nginx.org/
+
+      '
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - http3_hq
+    readOnly: false
+    type: boolean
+  services.nginx.virtualHosts.<name>.kTLS:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'false'
+    description: 'Whether to enable kTLS support.
+
+      Implementing TLS in the kernel (kTLS) improves performance by significantly
+
+      reducing the need for copying operations between user space and the kernel.
+
+      Required Nginx version 1.21.4 or later.
+
+      '
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - kTLS
+    readOnly: false
+    type: boolean
+  services.nginx.virtualHosts.<name>.listen:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '[ ]'
+    description: 'Listen addresses and ports for this virtual host.
+
+      IPv6 addresses must be enclosed in square brackets.
+
+      Note: this option overrides `addSSL`
+
+      and `onlySSL`.
+
+
+      If you only want to set the addresses manually and not
+
+      the ports, take a look at `listenAddresses`.
+
+      '
+    example:
+      _type: literalExpression
+      text: "[\n  {\n    addr = \"195.154.1.1\";\n    port = 443;\n    ssl = true;\n\
+        \  }\n  {\n    addr = \"192.154.1.1\";\n    port = 80;\n  }\n  {\n    addr\
+        \ = \"unix:/var/run/nginx.sock\";\n  }\n]"
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - listen
+    readOnly: false
+    type: list of (submodule)
+  services.nginx.virtualHosts.<name>.listen.*.addr:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    description: Listen address.
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - listen
+    - '*'
+    - addr
+    readOnly: false
+    type: string
+  services.nginx.virtualHosts.<name>.listen.*.extraParameters:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '[ ]'
+    description: Extra parameters of this listen directive.
+    example:
+      _type: literalExpression
+      text: "[\n  \"backlog=1024\"\n  \"deferred\"\n]"
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - listen
+    - '*'
+    - extraParameters
+    readOnly: false
+    type: list of string
+  services.nginx.virtualHosts.<name>.listen.*.port:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'null'
+    description: 'Port number to listen on.
+
+      If unset and the listen address is not a socket then nginx defaults to 80.
+
+      '
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - listen
+    - '*'
+    - port
+    readOnly: false
+    type: null or 16 bit unsigned integer; between 0 and 65535 (both inclusive)
+  services.nginx.virtualHosts.<name>.listen.*.proxyProtocol:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'false'
+    description: Enable PROXY protocol.
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - listen
+    - '*'
+    - proxyProtocol
+    readOnly: false
+    type: boolean
+  services.nginx.virtualHosts.<name>.listen.*.ssl:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'false'
+    description: Enable SSL.
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - listen
+    - '*'
+    - ssl
+    readOnly: false
+    type: boolean
+  services.nginx.virtualHosts.<name>.listenAddresses:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '[ ]'
+    description: 'Listen addresses for this virtual host.
+
+      Compared to `listen` this only sets the addresses
+
+      and the ports are chosen automatically.
+
+
+      Note: This option overrides `enableIPv6`
+
+      '
+    example:
+      _type: literalExpression
+      text: "[\n  \"127.0.0.1\"\n  \"[::1]\"\n]"
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - listenAddresses
+    readOnly: false
+    type: list of string
+  services.nginx.virtualHosts.<name>.locations:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '{ }'
+    description: Declarative location config
+    example:
+      _type: literalExpression
+      text: "{\n  \"/\" = {\n    proxyPass = \"http://localhost:3000\";\n  };\n};\n"
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - locations
+    readOnly: false
+    type: attribute set of (submodule)
+  services.nginx.virtualHosts.<name>.locations.<name>.alias:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'null'
+    description: 'Alias directory for requests.
+
+      '
+    example:
+      _type: literalExpression
+      text: '"/your/alias/directory"'
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - locations
+    - <name>
+    - alias
+    readOnly: false
+    type: null or path
+  services.nginx.virtualHosts.<name>.locations.<name>.basicAuth:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '{ }'
+    description: 'Basic Auth protection for a vhost.
+
+
+      WARNING: This is implemented to store the password in plain text in the
+
+      Nix store.
+
+      '
+    example:
+      _type: literalExpression
+      text: "{\n  user = \"password\";\n};\n"
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - locations
+    - <name>
+    - basicAuth
+    readOnly: false
+    type: attribute set of string
+  services.nginx.virtualHosts.<name>.locations.<name>.basicAuthFile:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'null'
+    description: 'Basic Auth password file for a vhost.
+
+      Can be created via: {command}`htpasswd -c <filename> <username>`.
+
+
+      WARNING: The generate file contains the users'' passwords in a
+
+      non-cryptographically-securely hashed way.
+
+      '
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - locations
+    - <name>
+    - basicAuthFile
+    readOnly: false
+    type: null or path
+  services.nginx.virtualHosts.<name>.locations.<name>.extraConfig:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '""'
+    description: 'These lines go to the end of the location verbatim.
+
+      '
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - locations
+    - <name>
+    - extraConfig
+    readOnly: false
+    type: strings concatenated with "\n"
+  services.nginx.virtualHosts.<name>.locations.<name>.fastcgiParams:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '{ }'
+    description: 'FastCGI parameters to override.  Unlike in the Nginx
+
+      configuration file, overriding only some default parameters
+
+      won''t unset the default values for other parameters.
+
+      '
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - locations
+    - <name>
+    - fastcgiParams
+    readOnly: false
+    type: attribute set of (string or path)
+  services.nginx.virtualHosts.<name>.locations.<name>.index:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'null'
+    description: 'Adds index directive.
+
+      '
+    example:
+      _type: literalExpression
+      text: '"index.php index.html"'
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - locations
+    - <name>
+    - index
+    readOnly: false
+    type: null or string
+  services.nginx.virtualHosts.<name>.locations.<name>.priority:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '1000'
+    description: 'Order of this location block in relation to the others in the vhost.
+
+      The semantics are the same as with `lib.mkOrder`. Smaller values have
+
+      a greater priority.
+
+      '
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - locations
+    - <name>
+    - priority
+    readOnly: false
+    type: signed integer
+  services.nginx.virtualHosts.<name>.locations.<name>.proxyPass:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'null'
+    description: 'Adds proxy_pass directive and sets recommended proxy headers if
+
+      recommendedProxySettings is enabled.
+
+      '
+    example:
+      _type: literalExpression
+      text: '"http://www.example.org/"'
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - locations
+    - <name>
+    - proxyPass
+    readOnly: false
+    type: null or string
+  services.nginx.virtualHosts.<name>.locations.<name>.proxyWebsockets:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'false'
+    description: 'Whether to support proxying websocket connections with HTTP/1.1.
+
+      '
+    example:
+      _type: literalExpression
+      text: 'true'
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - locations
+    - <name>
+    - proxyWebsockets
+    readOnly: false
+    type: boolean
+  services.nginx.virtualHosts.<name>.locations.<name>.recommendedProxySettings:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: config.services.nginx.recommendedProxySettings
+    description: 'Enable recommended proxy settings.
+
+      '
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - locations
+    - <name>
+    - recommendedProxySettings
+    readOnly: false
+    type: boolean
+  services.nginx.virtualHosts.<name>.locations.<name>.return:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'null'
+    description: 'Adds a return directive, for e.g. redirections.
+
+      '
+    example:
+      _type: literalExpression
+      text: '"301 http://example.com$request_uri"'
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - locations
+    - <name>
+    - return
+    readOnly: false
+    type: null or string
+  services.nginx.virtualHosts.<name>.locations.<name>.root:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'null'
+    description: 'Root directory for requests.
+
+      '
+    example:
+      _type: literalExpression
+      text: '"/your/root/directory"'
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - locations
+    - <name>
+    - root
+    readOnly: false
+    type: null or path
+  services.nginx.virtualHosts.<name>.locations.<name>.tryFiles:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'null'
+    description: 'Adds try_files directive.
+
+      '
+    example:
+      _type: literalExpression
+      text: '"$uri =404"'
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - locations
+    - <name>
+    - tryFiles
+    readOnly: false
+    type: null or string
+  services.nginx.virtualHosts.<name>.onlySSL:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'false'
+    description: 'Whether to enable HTTPS and reject plain HTTP connections. This
+      will set
+
+      defaults for `listen` to listen on all interfaces on port 443.
+
+      '
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - onlySSL
+    readOnly: false
+    type: boolean
+  services.nginx.virtualHosts.<name>.quic:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'false'
+    description: 'Whether to enable the QUIC transport protocol.
+
+      This requires using `pkgs.nginxQuic` package
+
+      which can be achieved by setting `services.nginx.package = pkgs.nginxQuic;`.
+
+      Note that QUIC support is experimental and
+
+      *not* yet recommended for production.
+
+      Read more at https://quic.nginx.org/
+
+      '
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - quic
+    readOnly: false
+    type: boolean
+  services.nginx.virtualHosts.<name>.rejectSSL:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'false'
+    description: 'Whether to listen for and reject all HTTPS connections to this vhost.
+      Useful in
+
+      [default](#opt-services.nginx.virtualHosts._name_.default)
+
+      server blocks to avoid serving the certificate for another vhost. Uses the
+
+      `ssl_reject_handshake` directive available in nginx versions
+
+      1.19.4 and above.
+
+      '
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - rejectSSL
+    readOnly: false
+    type: boolean
+  services.nginx.virtualHosts.<name>.reuseport:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'false'
+    description: 'Create an individual listening socket .
+
+      It is required to specify only once on one of the hosts.
+
+      '
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - reuseport
+    readOnly: false
+    type: boolean
+  services.nginx.virtualHosts.<name>.root:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'null'
+    description: 'The path of the web root directory.
+
+      '
+    example:
+      _type: literalExpression
+      text: '"/data/webserver/docs"'
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - root
+    readOnly: false
+    type: null or path
+  services.nginx.virtualHosts.<name>.serverAliases:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: '[ ]'
+    description: 'Additional names of virtual hosts served by this virtual host configuration.
+
+      '
+    example:
+      _type: literalExpression
+      text: "[\n  \"www.example.org\"\n  \"example.org\"\n]"
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - serverAliases
+    readOnly: false
+    type: list of string
+  services.nginx.virtualHosts.<name>.serverName:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'null'
+    description: 'Name of this virtual host. Defaults to attribute name in virtualHosts.
+
+      '
+    example:
+      _type: literalExpression
+      text: '"example.org"'
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - serverName
+    readOnly: false
+    type: null or string
+  services.nginx.virtualHosts.<name>.sslCertificate:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    description: Path to server SSL certificate.
+    example:
+      _type: literalExpression
+      text: '"/var/host.cert"'
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - sslCertificate
+    readOnly: false
+    type: path
+  services.nginx.virtualHosts.<name>.sslCertificateKey:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    description: Path to server SSL certificate key.
+    example:
+      _type: literalExpression
+      text: '"/var/host.key"'
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - sslCertificateKey
+    readOnly: false
+    type: path
+  services.nginx.virtualHosts.<name>.sslTrustedCertificate:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'null'
+    description: Path to root SSL certificate for stapling and client certificates.
+    example:
+      _type: literalExpression
+      text: '"${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt"'
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - sslTrustedCertificate
+    readOnly: false
+    type: null or path
+  services.nginx.virtualHosts.<name>.useACMEHost:
+    declarations:
+    - /nix/store/hx784gycsfzyrqgcl3dbldc64wj839r9-source/nixos/modules/services/web-servers/nginx/default.nix
+    default:
+      _type: literalExpression
+      text: 'null'
+    description: 'A host of an existing Let''s Encrypt certificate to use.
+
+      This is useful if you have many subdomains and want to avoid hitting the
+
+      [rate limit](https://letsencrypt.org/docs/rate-limits).
+
+      Alternately, you can generate a certificate through {option}`enableACME`.
+
+      *Note that this option does not create any certificates, nor it does add subdomains
+      to existing ones – you will need to create them manually using [](#opt-security.acme.certs).*
+
+      '
+    loc:
+    - services
+    - nginx
+    - virtualHosts
+    - <name>
+    - useACMEHost
+    readOnly: false
+    type: null or string
