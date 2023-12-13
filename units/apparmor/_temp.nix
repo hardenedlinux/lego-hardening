@@ -1,8 +1,12 @@
 _:
-{pkgs}:
+{ pkgs }:
 {
   bin =
-    { name, package, extraRules ? "" }:
+    {
+      name,
+      package,
+      extraRules ? "",
+    }:
     {
       "bin-${name}".profile = ''
         include <tunables/global>

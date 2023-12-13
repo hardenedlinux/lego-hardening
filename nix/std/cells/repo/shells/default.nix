@@ -7,8 +7,13 @@ l.mapAttrs (_: std.lib.dev.mkShell) {
   default =
     { ... }:
     {
-      name = "HardenedNixOS DevShell";
+      name = "LEGO Hardening";
       imports = [ cell.pops.devshellProfiles.exports.default.nickel ];
+
+      packages = [
+        nixpkgs.vagrant
+        nixpkgs.yq-go
+      ];
 
       nixago = [
         cell.nixago.treefmt.default
