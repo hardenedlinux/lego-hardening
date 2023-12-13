@@ -6,9 +6,9 @@
   };
 
   outputs =
-    { self, omnibus }@inputs:
+    {self, omnibus}@inputs:
     let
-      src = import ./nix/src/__init.nix { inherit inputs omnibus; };
+      src = import ./nix/src/__init.nix {inherit inputs omnibus;};
       inherit (omnibus.lib) mapPopsExports;
     in
     src.flakeOutputs

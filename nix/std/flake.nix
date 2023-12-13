@@ -15,14 +15,14 @@
   inputs = {
     nixpkgs.follows = "omnibusStd/nixpkgs";
     omnibusStd.url = "github:gtrunsec/omnibus/?dir=local";
-    omnibus.url = "github:gtrunsec/omnibus";
+    call-flake.follows = "omnibusStd/call-flake";
     std.follows = "omnibusStd/std";
   };
   outputs =
-    { std, omnibus, ... }@inputs:
+    {std, call-flake, ...}@inputs:
     std.growOn
       {
-        inputs = inputs // ((omnibus.pops.flake.setInitInputs ../lock).inputs);
+        inputs = inputs // (call-flake ../lock).inputs // (call-flake ../..).inputs;
         cellsFrom = ./cells;
 
         cellBlocks = with std.blockTypes; [

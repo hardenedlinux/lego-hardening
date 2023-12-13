@@ -1,4 +1,4 @@
-{ ansibleCollectionHardeningSrc }:
+{ansibleCollectionHardeningSrc}:
 let
   converge =
     (builtins.elemAt ansibleCollectionHardeningSrc.molecule.os_hardening.converge

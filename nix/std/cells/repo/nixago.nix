@@ -1,4 +1,4 @@
-{ inputs, cell }:
+{inputs, cell}:
 with inputs.std.inputs.dmerge;
 let
   cfg = {
@@ -17,7 +17,7 @@ in
     default = conform.default custom;
     custom = {
       data = {
-        commit.conventional.scopes = append [ ".*." ];
+        commit.conventional.scopes = append [".*."];
       };
     };
   };

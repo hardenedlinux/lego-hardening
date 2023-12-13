@@ -1,4 +1,4 @@
-{ omnibus, inputs }:
+{omnibus, inputs}:
 let
   inherit (inputs.omnibus.inputs.flops.inputs.nixlib) lib;
   eachSystem = lib.genAttrs [

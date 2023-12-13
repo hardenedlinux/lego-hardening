@@ -1,4 +1,4 @@
-{ inputs, cell }:
+{inputs, cell}:
 let
   inherit (inputs.std-ext.writers.lib) writeShellApplication;
   inherit (inputs) self nixpkgs std;
@@ -8,11 +8,11 @@ in
     let
       org-roam-book =
         inputs.org-roam-book-template.packages.${nixpkgs.system}.default.override
-          { org = "${(std.incl self [ (self + /docs/org) ])}/docs/org"; };
+          {org = "${(std.incl self [(self + /docs/org)])}/docs/org";};
     in
     writeShellApplication {
       name = "mkdoc";
-      runtimeInputs = [ nixpkgs.hugo ];
+      runtimeInputs = [nixpkgs.hugo];
       text = ''
         rsync -avzh ${org-roam-book}/* docs/publish
         cd docs/publish && cp ../config.toml .

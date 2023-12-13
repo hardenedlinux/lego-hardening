@@ -7,5 +7,5 @@
     ansible-collection-hardening.flake = false;
   };
 
-  outputs = _: { };
+  outputs = _: {};
 }

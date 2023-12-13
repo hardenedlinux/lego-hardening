@@ -1,4 +1,4 @@
-{ inputs, cell }:
+{inputs, cell}:
 let
   inherit (inputs) nixpkgs;
   inputs' = (inputs.omnibus.pops.flake.setSystem nixpkgs.system).inputs;
