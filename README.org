@@ -5,4 +5,5 @@
 
 * Acknowledgments
 
+- [[https://github.com/hkbhc/hkbhc-whitepaper/blob/master/White%20Paper%20on%20Secure%20and%20Compliant%20Web%203.0%20Infrastructure.pdf][White Paper on Secure and Compliant Web 3.0 Infrastructure]]
 - [[https://github.com/dev-sec/ansible-collection-hardening/tree/master][dev-sec: This Ansible collection provides battle tested hardening for Linux, SSH, nginx, MySQL]]
