@@ -1,0 +1,8 @@
+#+TITLE: LEGO Hardening
+#+AUTHOR: GuangTao Zhang
+#+EMAIL: gtrunsec@hardenedlinux.org
+
+
+* Acknowledgments
+
+- [[https://github.com/dev-sec/ansible-collection-hardening/tree/master][dev-sec: This Ansible collection provides battle tested hardening for Linux, SSH, nginx, MySQL]]

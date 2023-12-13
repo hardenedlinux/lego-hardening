@@ -1,8 +1,5 @@
 {ansibleCollectionHardeningSrc}:
 let
-  converge =
-    (builtins.elemAt ansibleCollectionHardeningSrc.molecule.os_hardening.converge
-      0
-    );
+  defaults = ansibleCollectionHardeningSrc.roles.os_hardening.defaults.main;
 in
-converge.vars.sysctl_config
+defaults
