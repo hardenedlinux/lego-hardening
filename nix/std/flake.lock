@@ -305,11 +305,11 @@
       },
       "locked": {
         "dir": "local",
-        "lastModified": 1702437989,
-        "narHash": "sha256-9XXRBX/dt7t7NT5nuyGFTknf3N6rNyCHVQ4wnM7DJzI=",
+        "lastModified": 1703407379,
+        "narHash": "sha256-heG95if2Q1W+5cQJNLTY/2vRDtp7Rw92fEG0m2MBXR0=",
         "owner": "gtrunsec",
         "repo": "omnibus",
-        "rev": "82a64bf5801f32f29fca3f43649b5ed0fd04ebe9",
+        "rev": "1d0799ad979abc184c3edae14a3acd0c85dc205d",
         "type": "github"
       },
       "original": {

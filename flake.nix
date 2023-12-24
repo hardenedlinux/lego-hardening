@@ -3,13 +3,17 @@
 
   inputs = {
     omnibus.url = "github:gtrunsec/omnibus";
+    omnibus.flake = false;
   };
 
   outputs =
-    {self, omnibus}@inputs:
+    { self, omnibus }@inputs:
     let
-      src = import ./nix/src/__init.nix {inherit inputs omnibus;};
-      inherit (omnibus.lib) mapPopsExports;
+      src = import ./nix/src/__init.nix {
+        inputs = inputs // {
+          omnibus = import inputs.omnibus;
+        };
+      };
     in
     src.flakeOutputs
     // {

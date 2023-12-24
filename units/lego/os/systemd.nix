@@ -1,4 +1,4 @@
-{self}:
+{ self }:
 {
   isolate = {
     CapabilityBoundingSet = "";
@@ -37,11 +37,11 @@
       "CAP_NET_BIND_SERVICE"
       "CAP_NET_RAW"
     ];
-    CapabilityBoundingSet = ["CAP_NET_BIND_SERVICE"];
+    CapabilityBoundingSet = [ "CAP_NET_BIND_SERVICE" ];
   };
 
   networked = self.isolate // {
-    IPAddressDeny = [""];
+    IPAddressDeny = [ "" ];
     PrivateNetwork = false;
     RestrictAddressFamilies = [
       "AF_INET"
@@ -50,6 +50,6 @@
   };
 
   socketed = self.isolate // {
-    RestrictAddressFamilies = ["AF_UNIX"];
+    RestrictAddressFamilies = [ "AF_UNIX" ];
   };
 }

@@ -1,6 +1,6 @@
-{root, lib}:
+{ root, lib }:
 let
-  units = lib.mapPopsExports root.pops;
+  units = lib.omnibus.mapPopsExports root.pops;
 in
 {
   inherit (units) nixosProfiles;

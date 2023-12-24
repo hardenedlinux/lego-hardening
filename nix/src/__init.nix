@@ -1,4 +1,4 @@
-{omnibus, inputs}:
+{ inputs }:
 let
   inherit (inputs.omnibus.inputs.flops.inputs.nixlib) lib;
   eachSystem = lib.genAttrs [
@@ -7,10 +7,10 @@ let
     "aarch64-darwin"
   ];
 in
-omnibus.load {
+inputs.omnibus.load {
   src = ./.;
   inputs = {
     projectDir = ../..;
-    inherit inputs eachSystem;
+    inherit eachSystem;
   };
 }

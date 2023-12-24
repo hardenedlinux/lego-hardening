@@ -4,7 +4,7 @@
   pkgs,
 }:
 let
-  temp = super.temp {inherit pkgs;};
+  temp = super.temp { inherit pkgs; };
   binary_example = temp.bin {
     name = "binary_example";
     package = pkgs.binary_example;

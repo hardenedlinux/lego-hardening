@@ -1,5 +1,5 @@
 _:
-{pkgs}:
+{ pkgs }:
 {
   bin =
     {
@@ -14,7 +14,7 @@ _:
           # include <abstractions/base>
           # include <abstractions/nameservice>
           # include <abstractions/ssl_certs>
-          include "${pkgs.apparmorRulesFromClosure {inherit name;} package}"
+          include "${pkgs.apparmorRulesFromClosure { inherit name; } package}"
           r ${package}/bin/${name},
         }
         ${extraRules}

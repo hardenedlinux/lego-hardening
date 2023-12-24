@@ -19,7 +19,7 @@
     std.follows = "omnibusStd/std";
   };
   outputs =
-    {std, call-flake, ...}@inputs:
+    { std, call-flake, ... }@inputs:
     std.growOn
       {
         inputs =
@@ -28,6 +28,7 @@
           // (call-flake ../..).inputs
           // {
             lego-hardening = call-flake ../..;
+            omnibus = import (call-flake ../..).inputs.omnibus;
           };
         cellsFrom = ./cells;
 

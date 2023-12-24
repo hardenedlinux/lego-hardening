@@ -5,5 +5,5 @@
 }:
 omnibus.pops.load {
   src = projectDir + /units/lego;
-  inputs = {};
+  inputs = { };
 }

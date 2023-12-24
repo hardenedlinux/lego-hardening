@@ -1,4 +1,4 @@
-{ansibleCollectionHardeningSrc}:
+{ ansibleCollectionHardeningSrc }:
 let
   defaults = ansibleCollectionHardeningSrc.roles.nginx_hardening.defaults.main;
   argument_specs =
