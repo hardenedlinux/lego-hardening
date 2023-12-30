@@ -1,13 +1,13 @@
 {
   "nodes": {
-    "omnibus": {
+    "omnibusSrc": {
       "flake": false,
       "locked": {
-        "lastModified": 1703407379,
-        "narHash": "sha256-heG95if2Q1W+5cQJNLTY/2vRDtp7Rw92fEG0m2MBXR0=",
+        "lastModified": 1703915843,
+        "narHash": "sha256-R7bRdD+z8nG6RDEX1uGqaLr+tlUCIWEU0yhCOPDUkq4=",
         "owner": "gtrunsec",
         "repo": "omnibus",
-        "rev": "1d0799ad979abc184c3edae14a3acd0c85dc205d",
+        "rev": "a70cf88c13e415ee1518c9a00c7f2362cd950274",
         "type": "github"
       },
       "original": {
@@ -18,7 +18,7 @@
     },
     "root": {
       "inputs": {
-        "omnibus": "omnibus"
+        "omnibusSrc": "omnibusSrc"
       }
     }
   },

@@ -28,7 +28,7 @@
           // (call-flake ../..).inputs
           // {
             lego-hardening = call-flake ../..;
-            omnibus = import (call-flake ../..).inputs.omnibus;
+            omnibus = import (call-flake ../..).inputs.omnibusSrc;
           };
         cellsFrom = ./cells;
 

@@ -2,16 +2,15 @@
   description = "Hardening your OS/Profile is like building with LEGO";
 
   inputs = {
-    omnibus.url = "github:gtrunsec/omnibus";
-    omnibus.flake = false;
+    omnibusSrc.url = "github:gtrunsec/omnibus";
+    omnibusSrc.flake = false;
   };
 
-  outputs =
-    { self, omnibus }@inputs:
+  outputs = inputs:
     let
-      src = import ./nix/src/__init.nix {
+      src = import ./nix/src {
         inputs = inputs // {
-          omnibus = import inputs.omnibus;
+          omnibus = import inputs.omnibusSrc;
         };
       };
     in

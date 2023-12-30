@@ -9,6 +9,7 @@ let
 in
 inputs.omnibus.load {
   src = ./.;
+  transformer = [ inputs.omnibus.lib.haumea.removeTopDefault ];
   inputs = {
     projectDir = ../..;
     inherit eachSystem;

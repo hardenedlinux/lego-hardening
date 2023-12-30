@@ -117,7 +117,7 @@ ansible-collection-hardening:
 nixos:
   services.nginx.additionalModules:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '[ ]'
@@ -137,7 +137,7 @@ nixos:
     type: list of attribute set of anything
   services.nginx.appendConfig:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '""'
@@ -162,7 +162,7 @@ nixos:
     type: strings concatenated with "\n"
   services.nginx.appendHttpConfig:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '""'
@@ -181,7 +181,7 @@ nixos:
     type: strings concatenated with "\n"
   services.nginx.clientMaxBodySize:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '"10m"'
@@ -194,7 +194,7 @@ nixos:
     type: string
   services.nginx.commonHttpConfig:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '""'
@@ -221,7 +221,7 @@ nixos:
     type: strings concatenated with "\n"
   services.nginx.config:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '""'
@@ -251,7 +251,7 @@ nixos:
     type: string
   services.nginx.defaultHTTPListenPort:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '80'
@@ -270,7 +270,7 @@ nixos:
     type: 16 bit unsigned integer; between 0 and 65535 (both inclusive)
   services.nginx.defaultListen:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '[ ]'
@@ -293,7 +293,7 @@ nixos:
     type: list of (submodule)
   services.nginx.defaultListen.*.addr:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     description: IP address.
     loc:
     - services
@@ -305,7 +305,7 @@ nixos:
     type: string
   services.nginx.defaultListen.*.extraParameters:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '[ ]'
@@ -323,7 +323,7 @@ nixos:
     type: list of string
   services.nginx.defaultListen.*.port:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'null'
@@ -338,7 +338,7 @@ nixos:
     type: null or 16 bit unsigned integer; between 0 and 65535 (both inclusive)
   services.nginx.defaultListen.*.proxyProtocol:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'false'
@@ -353,7 +353,7 @@ nixos:
     type: boolean
   services.nginx.defaultListen.*.ssl:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'null'
@@ -368,7 +368,7 @@ nixos:
     type: null or boolean
   services.nginx.defaultListenAddresses:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '[ "0.0.0.0" ] ++ lib.optional config.networking.enableIPv6 "[::0]"'
@@ -389,7 +389,7 @@ nixos:
     type: list of string
   services.nginx.defaultMimeTypes:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: $''{pkgs.mailcap}/etc/nginx/mime.types
@@ -413,7 +413,7 @@ nixos:
     type: path
   services.nginx.defaultSSLListenPort:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '443'
@@ -432,7 +432,7 @@ nixos:
     type: 16 bit unsigned integer; between 0 and 65535 (both inclusive)
   services.nginx.enable:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'false'
@@ -448,7 +448,7 @@ nixos:
     type: boolean
   services.nginx.enableQuicBPF:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'false'
@@ -473,7 +473,7 @@ nixos:
     type: boolean
   services.nginx.enableReload:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'false'
@@ -492,7 +492,7 @@ nixos:
     type: boolean
   services.nginx.eventsConfig:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '""'
@@ -507,7 +507,7 @@ nixos:
     type: strings concatenated with "\n"
   services.nginx.gitweb.enable:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/gitweb.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/gitweb.nix
     default:
       _type: literalExpression
       text: 'false'
@@ -523,7 +523,7 @@ nixos:
     type: boolean
   services.nginx.gitweb.group:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/gitweb.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/gitweb.nix
     default:
       _type: literalExpression
       text: '"nginx"'
@@ -540,7 +540,7 @@ nixos:
     type: string
   services.nginx.gitweb.location:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/gitweb.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/gitweb.nix
     default:
       _type: literalExpression
       text: '"/gitweb"'
@@ -556,7 +556,7 @@ nixos:
     type: string
   services.nginx.gitweb.user:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/gitweb.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/gitweb.nix
     default:
       _type: literalExpression
       text: '"nginx"'
@@ -573,7 +573,7 @@ nixos:
     type: string
   services.nginx.gitweb.virtualHost:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/gitweb.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/gitweb.nix
     default:
       _type: literalExpression
       text: '"_"'
@@ -589,7 +589,7 @@ nixos:
     type: string
   services.nginx.group:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '"nginx"'
@@ -602,7 +602,7 @@ nixos:
     type: string
   services.nginx.httpConfig:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '""'
@@ -623,7 +623,7 @@ nixos:
     type: strings concatenated with "\n"
   services.nginx.logError:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '"stderr"'
@@ -656,7 +656,7 @@ nixos:
     type: string
   services.nginx.mapHashBucketSize:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'null'
@@ -673,7 +673,7 @@ nixos:
     type: null or one of 32, 64, 128
   services.nginx.mapHashMaxSize:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'null'
@@ -688,7 +688,7 @@ nixos:
     type: null or positive integer, meaning >0
   services.nginx.package:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: pkgs.nginxStable
@@ -707,7 +707,7 @@ nixos:
     type: package
   services.nginx.preStart:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '""'
@@ -722,7 +722,7 @@ nixos:
     type: strings concatenated with "\n"
   services.nginx.proxyCachePath:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '{ }'
@@ -740,7 +740,7 @@ nixos:
     type: attribute set of (submodule)
   services.nginx.proxyCachePath.<name>.enable:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'false'
@@ -758,7 +758,7 @@ nixos:
     type: boolean
   services.nginx.proxyCachePath.<name>.inactive:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '"10m"'
@@ -782,7 +782,7 @@ nixos:
     type: string
   services.nginx.proxyCachePath.<name>.keysZoneName:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '"cache"'
@@ -800,7 +800,7 @@ nixos:
     type: string
   services.nginx.proxyCachePath.<name>.keysZoneSize:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '"10m"'
@@ -818,7 +818,7 @@ nixos:
     type: string
   services.nginx.proxyCachePath.<name>.levels:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '"1:2"'
@@ -843,7 +843,7 @@ nixos:
     type: string
   services.nginx.proxyCachePath.<name>.maxSize:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '"1g"'
@@ -861,7 +861,7 @@ nixos:
     type: string
   services.nginx.proxyCachePath.<name>.useTempPath:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'false'
@@ -889,7 +889,7 @@ nixos:
     type: boolean
   services.nginx.proxyResolveWhileRunning:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'false'
@@ -908,7 +908,7 @@ nixos:
     type: boolean
   services.nginx.proxyTimeout:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '"60s"'
@@ -926,7 +926,7 @@ nixos:
     type: string
   services.nginx.recommendedBrotliSettings:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'false'
@@ -946,7 +946,7 @@ nixos:
     type: boolean
   services.nginx.recommendedGzipSettings:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'false'
@@ -963,7 +963,7 @@ nixos:
     type: boolean
   services.nginx.recommendedOptimisation:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'false'
@@ -978,7 +978,7 @@ nixos:
     type: boolean
   services.nginx.recommendedProxySettings:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'false'
@@ -994,7 +994,7 @@ nixos:
     type: boolean
   services.nginx.recommendedTlsSettings:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'false'
@@ -1009,7 +1009,7 @@ nixos:
     type: boolean
   services.nginx.recommendedZstdSettings:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'false'
@@ -1029,7 +1029,7 @@ nixos:
     type: boolean
   services.nginx.resolver:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '{ }'
@@ -1045,7 +1045,7 @@ nixos:
     type: submodule
   services.nginx.resolver.addresses:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '[ ]'
@@ -1062,7 +1062,7 @@ nixos:
     type: list of string
   services.nginx.resolver.ipv6:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'true'
@@ -1083,7 +1083,7 @@ nixos:
     type: boolean
   services.nginx.resolver.valid:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '""'
@@ -1104,7 +1104,7 @@ nixos:
     type: string
   services.nginx.serverNamesHashBucketSize:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'null'
@@ -1121,7 +1121,7 @@ nixos:
     type: null or positive integer, meaning >0
   services.nginx.serverNamesHashMaxSize:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'null'
@@ -1136,7 +1136,7 @@ nixos:
     type: null or positive integer, meaning >0
   services.nginx.serverTokens:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'false'
@@ -1149,7 +1149,7 @@ nixos:
     type: boolean
   services.nginx.sslCiphers:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '"ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384"'
@@ -1162,7 +1162,7 @@ nixos:
     type: null or string
   services.nginx.sslDhparam:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'null'
@@ -1178,7 +1178,7 @@ nixos:
     type: null or path
   services.nginx.sslProtocols:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '"TLSv1.2 TLSv1.3"'
@@ -1194,7 +1194,7 @@ nixos:
     type: string
   services.nginx.sso.configuration:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/security/nginx-sso.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/security/nginx-sso.nix
     default:
       _type: literalExpression
       text: '{ }'
@@ -1220,7 +1220,7 @@ nixos:
     type: attribute set of unspecified value
   services.nginx.sso.enable:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/security/nginx-sso.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/security/nginx-sso.nix
     default:
       _type: literalExpression
       text: 'false'
@@ -1237,7 +1237,7 @@ nixos:
     type: boolean
   services.nginx.sso.package:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/security/nginx-sso.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/security/nginx-sso.nix
     default:
       _type: literalExpression
       text: pkgs.nginx-sso
@@ -1253,7 +1253,7 @@ nixos:
     type: package
   services.nginx.statusPage:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'false'
@@ -1268,7 +1268,7 @@ nixos:
     type: boolean
   services.nginx.streamConfig:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '""'
@@ -1287,7 +1287,7 @@ nixos:
     type: strings concatenated with "\n"
   services.nginx.upstreams:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '{ }'
@@ -1312,7 +1312,7 @@ nixos:
     type: attribute set of (submodule)
   services.nginx.upstreams.<name>.extraConfig:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '""'
@@ -1329,7 +1329,7 @@ nixos:
     type: strings concatenated with "\n"
   services.nginx.upstreams.<name>.servers:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '{ }'
@@ -1353,7 +1353,7 @@ nixos:
     type: attribute set of (attribute set of (boolean or signed integer or string))
   services.nginx.upstreams.<name>.servers.<name>.backup:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'false'
@@ -1374,7 +1374,7 @@ nixos:
     type: boolean
   services.nginx.user:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '"nginx"'
@@ -1387,7 +1387,7 @@ nixos:
     type: string
   services.nginx.virtualHosts:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: "{\n  localhost = { };\n}"
@@ -1405,7 +1405,7 @@ nixos:
     type: attribute set of (submodule)
   services.nginx.virtualHosts.<name>.acmeFallbackHost:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'null'
@@ -1432,7 +1432,7 @@ nixos:
     type: null or string
   services.nginx.virtualHosts.<name>.acmeRoot:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '"/var/lib/acme/acme-challenge"'
@@ -1452,7 +1452,7 @@ nixos:
     type: null or string
   services.nginx.virtualHosts.<name>.addSSL:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'false'
@@ -1474,7 +1474,7 @@ nixos:
     type: boolean
   services.nginx.virtualHosts.<name>.basicAuth:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '{ }'
@@ -1499,7 +1499,7 @@ nixos:
     type: attribute set of string
   services.nginx.virtualHosts.<name>.basicAuthFile:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'null'
@@ -1523,7 +1523,7 @@ nixos:
     type: null or path
   services.nginx.virtualHosts.<name>.default:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'false'
@@ -1540,7 +1540,7 @@ nixos:
     type: boolean
   services.nginx.virtualHosts.<name>.enableACME:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'false'
@@ -1559,7 +1559,7 @@ nixos:
     type: boolean
   services.nginx.virtualHosts.<name>.extraConfig:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '""'
@@ -1576,7 +1576,7 @@ nixos:
     type: strings concatenated with "\n"
   services.nginx.virtualHosts.<name>.forceSSL:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'false'
@@ -1600,7 +1600,7 @@ nixos:
     type: boolean
   services.nginx.virtualHosts.<name>.globalRedirect:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'null'
@@ -1622,7 +1622,7 @@ nixos:
     type: null or string
   services.nginx.virtualHosts.<name>.http2:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'true'
@@ -1651,7 +1651,7 @@ nixos:
     type: boolean
   services.nginx.virtualHosts.<name>.http3:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'true'
@@ -1682,7 +1682,7 @@ nixos:
     type: boolean
   services.nginx.virtualHosts.<name>.http3_hq:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'false'
@@ -1714,7 +1714,7 @@ nixos:
     type: boolean
   services.nginx.virtualHosts.<name>.kTLS:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'false'
@@ -1737,7 +1737,7 @@ nixos:
     type: boolean
   services.nginx.virtualHosts.<name>.listen:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '[ ]'
@@ -1770,7 +1770,7 @@ nixos:
     type: list of (submodule)
   services.nginx.virtualHosts.<name>.listen.*.addr:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     description: Listen address.
     loc:
     - services
@@ -1784,7 +1784,7 @@ nixos:
     type: string
   services.nginx.virtualHosts.<name>.listen.*.extraParameters:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '[ ]'
@@ -1804,7 +1804,7 @@ nixos:
     type: list of string
   services.nginx.virtualHosts.<name>.listen.*.port:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'null'
@@ -1825,7 +1825,7 @@ nixos:
     type: null or 16 bit unsigned integer; between 0 and 65535 (both inclusive)
   services.nginx.virtualHosts.<name>.listen.*.proxyProtocol:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'false'
@@ -1842,7 +1842,7 @@ nixos:
     type: boolean
   services.nginx.virtualHosts.<name>.listen.*.ssl:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'false'
@@ -1859,7 +1859,7 @@ nixos:
     type: boolean
   services.nginx.virtualHosts.<name>.listenAddresses:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '[ ]'
@@ -1886,7 +1886,7 @@ nixos:
     type: list of string
   services.nginx.virtualHosts.<name>.locations:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '{ }'
@@ -1904,7 +1904,7 @@ nixos:
     type: attribute set of (submodule)
   services.nginx.virtualHosts.<name>.locations.<name>.alias:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'null'
@@ -1926,7 +1926,7 @@ nixos:
     type: null or path
   services.nginx.virtualHosts.<name>.locations.<name>.basicAuth:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '{ }'
@@ -1953,7 +1953,7 @@ nixos:
     type: attribute set of string
   services.nginx.virtualHosts.<name>.locations.<name>.basicAuthFile:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'null'
@@ -1979,7 +1979,7 @@ nixos:
     type: null or path
   services.nginx.virtualHosts.<name>.locations.<name>.extraConfig:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '""'
@@ -1998,7 +1998,7 @@ nixos:
     type: strings concatenated with "\n"
   services.nginx.virtualHosts.<name>.locations.<name>.fastcgiParams:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '{ }'
@@ -2021,7 +2021,7 @@ nixos:
     type: attribute set of (string or path)
   services.nginx.virtualHosts.<name>.locations.<name>.index:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'null'
@@ -2043,7 +2043,7 @@ nixos:
     type: null or string
   services.nginx.virtualHosts.<name>.locations.<name>.priority:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '1000'
@@ -2066,7 +2066,7 @@ nixos:
     type: signed integer
   services.nginx.virtualHosts.<name>.locations.<name>.proxyPass:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'null'
@@ -2090,7 +2090,7 @@ nixos:
     type: null or string
   services.nginx.virtualHosts.<name>.locations.<name>.proxyWebsockets:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'false'
@@ -2112,7 +2112,7 @@ nixos:
     type: boolean
   services.nginx.virtualHosts.<name>.locations.<name>.recommendedProxySettings:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: config.services.nginx.recommendedProxySettings
@@ -2131,7 +2131,7 @@ nixos:
     type: boolean
   services.nginx.virtualHosts.<name>.locations.<name>.return:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'null'
@@ -2153,7 +2153,7 @@ nixos:
     type: null or string
   services.nginx.virtualHosts.<name>.locations.<name>.root:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'null'
@@ -2175,7 +2175,7 @@ nixos:
     type: null or path
   services.nginx.virtualHosts.<name>.locations.<name>.tryFiles:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'null'
@@ -2197,7 +2197,7 @@ nixos:
     type: null or string
   services.nginx.virtualHosts.<name>.onlySSL:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'false'
@@ -2217,7 +2217,7 @@ nixos:
     type: boolean
   services.nginx.virtualHosts.<name>.quic:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'false'
@@ -2244,7 +2244,7 @@ nixos:
     type: boolean
   services.nginx.virtualHosts.<name>.rejectSSL:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'false'
@@ -2270,7 +2270,7 @@ nixos:
     type: boolean
   services.nginx.virtualHosts.<name>.reuseport:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'false'
@@ -2289,7 +2289,7 @@ nixos:
     type: boolean
   services.nginx.virtualHosts.<name>.root:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'null'
@@ -2309,7 +2309,7 @@ nixos:
     type: null or path
   services.nginx.virtualHosts.<name>.serverAliases:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: '[ ]'
@@ -2329,7 +2329,7 @@ nixos:
     type: list of string
   services.nginx.virtualHosts.<name>.serverName:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'null'
@@ -2349,7 +2349,7 @@ nixos:
     type: null or string
   services.nginx.virtualHosts.<name>.sslCertificate:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     description: Path to server SSL certificate.
     example:
       _type: literalExpression
@@ -2364,7 +2364,7 @@ nixos:
     type: path
   services.nginx.virtualHosts.<name>.sslCertificateKey:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     description: Path to server SSL certificate key.
     example:
       _type: literalExpression
@@ -2379,7 +2379,7 @@ nixos:
     type: path
   services.nginx.virtualHosts.<name>.sslTrustedCertificate:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'null'
@@ -2397,7 +2397,7 @@ nixos:
     type: null or path
   services.nginx.virtualHosts.<name>.useACMEHost:
     declarations:
-    - /nix/store/rxjdinl8nai90ky2kfri7pl6p2j46f3w-source/nixos/modules/services/web-servers/nginx/default.nix
+    - /nix/store/0j9d9r6bycx79qgbaylxkyxm57ddvrys-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'null'
