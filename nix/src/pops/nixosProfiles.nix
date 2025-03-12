@@ -22,7 +22,7 @@
         inputs = {
           inherit system;
           inputs = inputs // {
-            inherit ((omnibus.flake.setSystem system).inputs) nixos-23_11;
+            inherit ((omnibus.flake.setSystem system).inputs) nixos-24_05;
           };
         };
       };

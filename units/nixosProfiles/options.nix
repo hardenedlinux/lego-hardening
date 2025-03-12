@@ -4,8 +4,8 @@
   self,
 }:
 {
-  nginx =
-    (import (inputs.nixos-23_11.outPath + "/nixos/lib/eval-config.nix") {
+  nginx = (
+    import (inputs.nixos-24_05.outPath + "/nixos/lib/eval-config.nix") {
       inherit system;
       modules = [
         {
@@ -14,9 +14,10 @@
           };
         }
       ];
-    });
+    }
+  );
 
-  nginxNixosOptionsDoc = inputs.nixos-23_11.legacyPackages.nixosOptionsDoc {
+  nginxNixosOptionsDoc = inputs.nixos-24_05.legacyPackages.nixosOptionsDoc {
     options = self.nginx.options.services.nginx;
   };
   nginxNixosOptionsDocJson = builtins.fromJSON (

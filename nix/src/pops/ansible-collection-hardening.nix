@@ -20,13 +20,13 @@ eachSystem (
   system:
   let
     ansibleCollectionHardeningSrc =
-      (omnibusLib.${system}.exports.default.pops.allData.addLoadExtender {
+      (omnibusLib.${system}.exports.default.pops.data.addLoadExtender {
         load = {
           src = super.subflake.inputs.ansible-collection-hardening;
         };
       }).exports.default;
   in
-  omnibusLib.${system}.exports.default.pops.allData.addLoadExtender {
+  omnibusLib.${system}.exports.default.pops.data.addLoadExtender {
     load = {
       src = projectDir + "/units/dev-sec/ansible-collection-hardening";
       inputs = {

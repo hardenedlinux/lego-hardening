@@ -12,25 +12,31 @@
     ];
   };
 
-  inputs = {
-    nixpkgs.follows = "omnibusStd/nixpkgs";
-    omnibusStd.url = "github:gtrunsec/omnibus/?dir=local";
-    call-flake.follows = "omnibusStd/call-flake";
-    std.follows = "omnibusStd/std";
-  };
+  inputs = { };
   outputs =
-    { std, call-flake, ... }@inputs:
+    inputs:
+    let
+      inputsSource = inputs // rec {
+        omnibus = import (import ../..).inputs.omnibusSrc;
+        inherit (omnibus.flake.inputs) std;
+      };
+      inherit (inputsSource.omnibus.flake.inputs) std;
+      inherit (inputsSource.omnibus) call-flake;
+    in
     std.growOn
       {
         inputs =
-          inputs
+          inputsSource
           // (call-flake ../lock).inputs
           // (call-flake ../..).inputs
           // {
             lego-hardening = call-flake ../..;
-            omnibus = import (call-flake ../..).inputs.omnibusSrc;
           };
         cellsFrom = ./cells;
+
+        nixpkgsConfig = {
+          allowUnfree = true;
+        };
 
         cellBlocks = with std.blockTypes; [
           (installables "packages")

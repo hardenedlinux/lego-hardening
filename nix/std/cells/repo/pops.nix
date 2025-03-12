@@ -8,7 +8,7 @@ in
   devshellProfiles =
     (inputs.omnibus.pops.devshellProfiles.addLoadExtender {
       load.inputs.inputs = {
-        inherit (inputs) nickel;
+        inherit (inputs') nickel;
       };
     }).addExporter
       (
@@ -16,13 +16,14 @@ in
           _self: _super: {
             exports = rec {
               inherit (inputs.omnibus.lib.omnibus.mapPopsExports pops) self;
-              pops.self =
-                (self.layouts.default.addLoadExtender {
+              pops.self = (
+                self.layouts.default.addLoadExtender {
                   load.inputs = {
                     # extend the inputs of the default layout
                     # inherit inputs cell;
                   };
-                });
+                }
+              );
             };
           }
         )
@@ -30,7 +31,7 @@ in
   configs = inputs.omnibus.pops.configs {
     inputs = {
       inputs = {
-        inherit (inputs') nixfmt topiary nur;
+        inherit (inputs') nixfmt git-hooks;
         inherit (inputs) std;
         inherit nixpkgs;
       };
