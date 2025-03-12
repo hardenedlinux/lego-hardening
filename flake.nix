@@ -4,8 +4,6 @@
   inputs = {
     omnibusSrc.url = "github:tao3k/omnibus";
     omnibusSrc.flake = false;
-
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
   };
 
   outputs =

@@ -850,19 +850,19 @@ nixos:
     - recommendedGzipSettings
     readOnly: false
     type: boolean
-  services.nginx.recommendedOptimization:
+  services.nginx.recommendedOptimisation:
     declarations:
     - /nix/store/pnpzjy3f435dkc4xgrgarvp9lfjq9fij-source/nixos/modules/services/web-servers/nginx/default.nix
     default:
       _type: literalExpression
       text: 'false'
-    description: 'Enable recommended optimization settings.
+    description: 'Enable recommended optimisation settings.
 
       '
     loc:
     - services
     - nginx
-    - recommendedOptimization
+    - recommendedOptimisation
     readOnly: false
     type: boolean
   services.nginx.recommendedProxySettings:
